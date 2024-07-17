@@ -68,6 +68,31 @@ class _HomeViewState extends State<HomeView> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.green,
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+          switch (index) {
+            case 0:
+              Navigator.of(context).pushNamed("/home_view");
+              break;
+            case 1:
+              Navigator.of(context).pushNamed("/business_view");
+              break;
+            case 2:
+              Navigator.of(context).pushNamed("/services_view");
+              break;
+            case 3:
+              Navigator.of(context).pushNamed("/cliente_view");
+              break;
+            case 4:
+              Navigator.of(context).pushNamed("/contact_view");
+              break;
+          }
+          _selectedIndex = 0;
+        },
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
