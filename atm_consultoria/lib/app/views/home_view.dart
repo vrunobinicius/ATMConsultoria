@@ -8,6 +8,8 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  int _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +18,17 @@ class _HomeViewState extends State<HomeView> {
         title: const Text("ATM Consultoria"),
         foregroundColor: Colors.black,
       ),
-      drawer: const Drawer(),
+      drawer: Drawer(
+          child: ListView(
+        children: const [
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.green,
+            ),
+            child: null,
+          ),
+        ],
+      )),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
